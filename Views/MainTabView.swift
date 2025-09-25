@@ -1,4 +1,5 @@
 import SwiftUI
+import HealthKit
 
 struct MainTabView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
@@ -11,6 +12,12 @@ struct MainTabView: View {
                     Text("Home")
                 }
             
+            CompleteMealAnalyzerView()
+                .tabItem {
+                    Image(systemName: "camera.viewfinder")
+                    Text("Meal AI")
+                }
+            
             ProfileView()
                 .tabItem {
                     Image(systemName: "person.fill")
@@ -18,6 +25,7 @@ struct MainTabView: View {
                 }
         }
         .accentColor(Color(red: 0.7, green: 0.9, blue: 0.3))
+        .preferredColorScheme(.dark)
     }
 }
 
@@ -26,51 +34,89 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
-                Image(systemName: "heart.text.square")
-                    .font(.system(size: 60))
-                    .foregroundColor(Color(red: 0.7, green: 0.9, blue: 0.3))
+            ZStack {
+                // Dark background
+                Color.black.ignoresSafeArea()
                 
-                Text("Welcome to Diabfit!")
-                    .font(.title)
-                    .fontWeight(.bold)
-                
-                if let user = authViewModel.currentUser {
-                    Text("Hello, \(user.name)!")
-                        .font(.title2)
-                        .foregroundColor(.secondary)
-                }
-                
-                VStack(spacing: 15) {
-                    FeatureCard(
-                        icon: "chart.line.uptrend.xyaxis",
-                        title: "Track Glucose",
-                        description: "Monitor your blood sugar levels"
-                    )
+                VStack(spacing: 20) {
+                    Image(systemName: "heart.text.square")
+                        .font(.system(size: 60))
+                        .foregroundColor(Color(red: 0.7, green: 0.9, blue: 0.3))
                     
-                    FeatureCard(
-                        icon: "chart.line.uptrend.xyaxis",
-                        title: "Health",
-                        description: "Monitor your blood sugar levels"
-                    )
-                    FeatureCard(
-                        icon: "figure.walk",
-                        title: "Exercise Log",
-                        description: "Record your fitness activities"
-                    )
+                    Text("Welcome to Diabfit!")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
                     
-                    FeatureCard(
-                        icon: "fork.knife",
-                        title: "Meal Planning",
-                        description: "Plan diabetes-friendly meals"
-                    )
+                    if let user = authViewModel.currentUser {
+                        Text("Hello, \(user.name)!")
+                            .font(.title2)
+                            .foregroundColor(Color.gray.opacity(0.8))
+                    }
+                    
+                    VStack(spacing: 15) {
+                        NavigationLink(destination: GlucoseTrackingView()) {
+                            FeatureCard(
+                                icon: "chart.line.uptrend.xyaxis",
+                                title: "Track Glucose",
+                                description: "Monitor your blood sugar levels"
+                            )
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        NavigationLink(destination: HealthView()) {
+                            FeatureCard(
+                                icon: "heart.fill",
+                                title: "Health",
+                                description: "Track your overall health metrics"
+                            )
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        NavigationLink(destination: ExerciseView()) {
+                            FeatureCard(
+                                icon: "figure.walk",
+                                title: "Exercise Log",
+                                description: "Record your fitness activities"
+                            )
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        NavigationLink(destination: MedicationTrackerView()) {
+                            FeatureCard(
+                                icon: "pills.fill",
+                                title: "Medication Tracker",
+                                description: "Track medications and adherence"
+                            )
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        NavigationLink(destination: MealPlanningView()) {
+                            FeatureCard(
+                                icon: "fork.knife",
+                                title: "Meal Planning",
+                                description: "Plan diabetes-friendly meals"
+                            )
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        NavigationLink(destination: CompleteMealAnalyzerView()) {
+                            FeatureCard(
+                                icon: "camera.viewfinder",
+                                title: "AI Meal Analyzer",
+                                description: "Analyze meals with AI for diabetes insights"
+                            )
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                    .padding(.horizontal)
+                    
+                    Spacer()
                 }
-                .padding(.horizontal)
-                
-                Spacer()
+                .padding()
             }
-            .padding()
             .navigationTitle("Diabfit")
+            .toolbarColorScheme(.dark, for: .navigationBar)
         }
     }
 }
@@ -90,19 +136,24 @@ struct FeatureCard: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
                     .font(.headline)
+                    .foregroundColor(.white)
                 Text(description)
                     .font(.caption)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(Color.gray.opacity(0.8))
             }
             
             Spacer()
             
             Image(systemName: "chevron.right")
-                .foregroundColor(.secondary)
+                .foregroundColor(Color.gray.opacity(0.6))
         }
         .padding()
-        .background(Color(.systemGray6))
+        .background(Color.gray.opacity(0.15))
         .cornerRadius(12)
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+        )
     }
 }
 
@@ -111,59 +162,76 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
-                // Profile header
-                VStack(spacing: 15) {
-                    Image(systemName: "person.circle.fill")
-                        .font(.system(size: 80))
-                        .foregroundColor(Color(red: 0.7, green: 0.9, blue: 0.3))
-                    
-                    if let user = authViewModel.currentUser {
-                        Text(user.name)
-                            .font(.title2)
-                            .fontWeight(.semibold)
+            ZStack {
+                // Dark background
+                Color.black.ignoresSafeArea()
+                
+                VStack(spacing: 20) {
+                    // Profile header
+                    VStack(spacing: 15) {
+                        Image(systemName: "person.circle.fill")
+                            .font(.system(size: 80))
+                            .foregroundColor(Color(red: 0.7, green: 0.9, blue: 0.3))
                         
-                        Text(user.email)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                        if let user = authViewModel.currentUser {
+                            Text(user.name)
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                            
+                            Text(user.email)
+                                .font(.caption)
+                                .foregroundColor(Color.gray.opacity(0.8))
+                        }
                     }
-                }
-                .padding(.top, 20)
-                
-                // Profile options
-                VStack(spacing: 0) {
-                    // Biometric authentication toggle
-                    if authViewModel.getBiometricService().isBiometricAvailable {
-                        BiometricToggleRow(authViewModel: authViewModel)
-                        Divider()
-                    }
+                    .padding(.top, 20)
                     
-                    ProfileRow(icon: "bell", title: "Notifications", showChevron: true)
-                    ProfileRow(icon: "lock", title: "Privacy & Security", showChevron: true)
-                    ProfileRow(icon: "questionmark.circle", title: "Help & Support", showChevron: true)
-                    ProfileRow(icon: "info.circle", title: "About", showChevron: true)
+                    // Profile options
+                    VStack(spacing: 0) {
+                        // Biometric authentication toggle
+                        if authViewModel.getBiometricService().isBiometricAvailable {
+                            BiometricToggleRow(authViewModel: authViewModel)
+                            Divider()
+                                .background(Color.gray.opacity(0.3))
+                        }
+                        
+                        ProfileRow(icon: "bell", title: "Notifications", showChevron: true)
+                        ProfileRow(icon: "lock", title: "Privacy & Security", showChevron: true)
+                        ProfileRow(icon: "questionmark.circle", title: "Help & Support", showChevron: true)
+                        ProfileRow(icon: "info.circle", title: "About", showChevron: true)
+                    }
+                    .background(Color.gray.opacity(0.15))
+                    .cornerRadius(12)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+                    )
+                    .padding(.horizontal)
+                    
+                    Spacer()
+                    
+                    // Sign out button
+                    Button(action: {
+                        authViewModel.signOut()
+                    }) {
+                        Text("Sign Out")
+                            .foregroundColor(.red)
+                            .fontWeight(.semibold)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 50)
+                            .background(Color.gray.opacity(0.15))
+                            .cornerRadius(12)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(Color.red.opacity(0.3), lineWidth: 1)
+                            )
+                    }
+                    .padding(.horizontal)
+                    .padding(.bottom, 30)
                 }
-                .background(Color(.systemGray6))
-                .cornerRadius(12)
-                .padding(.horizontal)
-                
-                Spacer()
-                
-                // Sign out button
-                Button(action: {
-                    authViewModel.signOut()
-                }) {
-                    Text("Sign Out")
-                        .foregroundColor(.red)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 50)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(12)
-                }
-                .padding(.horizontal)
-                .padding(.bottom, 30)
             }
             .navigationTitle("Profile")
+            .toolbarColorScheme(.dark, for: .navigationBar)
         }
     }
 }
@@ -179,6 +247,7 @@ struct BiometricToggleRow: View {
             
             Text(authViewModel.getBiometricService().getBiometricTypeString())
                 .font(.body)
+                .foregroundColor(.white)
             
             Spacer()
             
@@ -206,7 +275,7 @@ struct BiometricToggleRow: View {
             .toggleStyle(SwitchToggleStyle(tint: Color(red: 0.7, green: 0.9, blue: 0.3)))
         }
         .padding()
-        .background(Color(.systemGray6))
+        .background(Color.clear)
     }
 }
 
@@ -223,21 +292,22 @@ struct ProfileRow: View {
             
             Text(title)
                 .font(.body)
+                .foregroundColor(.white)
             
             Spacer()
             
             if showChevron {
                 Image(systemName: "chevron.right")
-                    .foregroundColor(.secondary)
+                    .foregroundColor(Color.gray.opacity(0.6))
                     .font(.caption)
             }
         }
         .padding()
-        .background(Color(.systemGray6))
+        .background(Color.clear)
     }
 }
 
 #Preview {
     MainTabView()
-        .environmentObject(AuthViewModel())
+        .preferredColorScheme(.dark)
 }

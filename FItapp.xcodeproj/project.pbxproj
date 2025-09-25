@@ -6,17 +6,71 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXFileReference section */
-		993663EB2E8477CB0005905D /* FItapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FItapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
+/* Begin PBXBuildFile section */
+		9936642B2E847AF00005905D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993664192E847AF00005905D /* Assets.xcassets */; };
+		9936642C2E847AF00005905D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9936641E2E847AF00005905D /* Preview Assets.xcassets */; };
+		9936642D2E847AF00005905D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664252E847AF00005905D /* LoginView.swift */; };
+		9936642E2E847AF00005905D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9936641C2E847AF00005905D /* User.swift */; };
+		9936642F2E847AF00005905D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664272E847AF00005905D /* SplashView.swift */; };
+		993664302E847AF00005905D /* BiometricAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664242E847AF00005905D /* BiometricAuthView.swift */; };
+		993664312E847AF00005905D /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664222E847AF00005905D /* AuthViewModel.swift */; };
+		993664322E847AF00005905D /* DiabfitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9936641A2E847AF00005905D /* DiabfitApp.swift */; };
+		993664332E847AF00005905D /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664262E847AF00005905D /* MainTabView.swift */; };
+		993664342E847AF00005905D /* BiometricAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664202E847AF00005905D /* BiometricAuthService.swift */; };
+		993664352E847AF00005905D /* MealPlanningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664372E847AF00005905D /* MealPlanningService.swift */; };
+		993664382E847AF00005905D /* AIAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664392E847AF00005905D /* AIAnalyticsService.swift */; };
+		9936643A2E847AF00005905D /* MealModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9936643B2E847AF00005905D /* MealModels.swift */; };
+		993664522E847AF00005905D /* GlucoseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664532E847AF00005905D /* GlucoseModels.swift */; };
+		993664542E847AF00005905D /* HealthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664552E847AF00005905D /* HealthModels.swift */; };
+		993664562E847AF00005905D /* ExerciseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664572E847AF00005905D /* ExerciseModels.swift */; };
+		993664582E847AF00005905D /* MedicationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664592E847AF00005905D /* MedicationModels.swift */; };
+		9936645A2E847AF00005905D /* MealAnalysisModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9936645B2E847AF00005905D /* MealAnalysisModels.swift */; };
+		9936643C2E847AF00005905D /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9936643D2E847AF00005905D /* HealthKitManager.swift */; };
+		9936643E2E847AF00005905D /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9936643F2E847AF00005905D /* KeychainManager.swift */; };
+		993664402E847AF00005905D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664412E847AF00005905D /* CoreDataManager.swift */; };
+		993664422E847AF00005905D /* AnalyticsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664432E847AF00005905D /* AnalyticsEngine.swift */; };
+		993664442E847AF00005905D /* ExerciseLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664452E847AF00005905D /* ExerciseLogView.swift */; };
+		993664462E847AF00005905D /* GlucoseTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664472E847AF00005905D /* GlucoseTrackingView.swift */; };
+		993664482E847AF00005905D /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664492E847AF00005905D /* HealthView.swift */; };
+		9936644A2E847AF00005905D /* MealPlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9936644B2E847AF00005905D /* MealPlanningView.swift */; };
+		993664512E847AF00005905D /* CoreDataEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993664502E847AF00005905D /* CoreDataEntities.swift */; };
+		9936645E2E847AF00005905D /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9936645C2E847AF00005905D /* ExerciseView.swift */; };
+		9936645F2E847AF00005905D /* MedicationTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9936645D2E847AF00005905D /* MedicationTrackerView.swift */; };
+/* End PBXBuildFile section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		993663ED2E8477CB0005905D /* FItapp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FItapp;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
+/* Begin PBXFileReference section */
+		993664192E847AF00005905D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9936641A2E847AF00005905D /* DiabfitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiabfitApp.swift; sourceTree = "<group>"; };
+		9936641B2E847AF00005905D /* FItapp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = FItapp.xcodeproj; sourceTree = "<group>"; };
+		9936641C2E847AF00005905D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9936641E2E847AF00005905D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		993664202E847AF00005905D /* BiometricAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthService.swift; sourceTree = "<group>"; };
+		993664222E847AF00005905D /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		993664242E847AF00005905D /* BiometricAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthView.swift; sourceTree = "<group>"; };
+		993664252E847AF00005905D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		993664262E847AF00005905D /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		993664272E847AF00005905D /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		993664362E848ACA0005905D /* FItapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FItapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		993664372E847AF00005905D /* MealPlanningService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanningService.swift; sourceTree = "<group>"; };
+		993664392E847AF00005905D /* AIAnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAnalyticsService.swift; sourceTree = "<group>"; };
+		9936643B2E847AF00005905D /* MealModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealModels.swift; sourceTree = "<group>"; };
+		9936643D2E847AF00005905D /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		9936643F2E847AF00005905D /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		993664412E847AF00005905D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		993664432E847AF00005905D /* AnalyticsEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEngine.swift; sourceTree = "<group>"; };
+		993664452E847AF00005905D /* ExerciseLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseLogView.swift; sourceTree = "<group>"; };
+		993664472E847AF00005905D /* GlucoseTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseTrackingView.swift; sourceTree = "<group>"; };
+		993664492E847AF00005905D /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
+		9936644B2E847AF00005905D /* MealPlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanningView.swift; sourceTree = "<group>"; };
+		993664502E847AF00005905D /* CoreDataEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEntities.swift; sourceTree = "<group>"; };
+		993664532E847AF00005905D /* GlucoseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseModels.swift; sourceTree = "<group>"; };
+		993664552E847AF00005905D /* HealthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModels.swift; sourceTree = "<group>"; };
+		993664572E847AF00005905D /* ExerciseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModels.swift; sourceTree = "<group>"; };
+		993664592E847AF00005905D /* MedicationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationModels.swift; sourceTree = "<group>"; };
+		9936645B2E847AF00005905D /* MealAnalysisModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealAnalysisModels.swift; sourceTree = "<group>"; };
+		9936645C2E847AF00005905D /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		9936645D2E847AF00005905D /* MedicationTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTrackerView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		993663E82E8477CB0005905D /* Frameworks */ = {
@@ -32,17 +86,115 @@
 		993663E22E8477CB0005905D = {
 			isa = PBXGroup;
 			children = (
-				993663ED2E8477CB0005905D /* FItapp */,
-				993663EC2E8477CB0005905D /* Products */,
+				993664192E847AF00005905D /* Assets.xcassets */,
+				9936641A2E847AF00005905D /* DiabfitApp.swift */,
+				9936641B2E847AF00005905D /* FItapp.xcodeproj */,
+				9936641D2E847AF00005905D /* Models */,
+				9936641F2E847AF00005905D /* Preview Content */,
+				993664212E847AF00005905D /* Services */,
+				993664232E847AF00005905D /* ViewModels */,
+				993664282E847AF00005905D /* Views */,
+				9936644C2E847AF00005905D /* HealthKit */,
+				9936644D2E847AF00005905D /* Security */,
+				9936644E2E847AF00005905D /* Data */,
+				9936644F2E847AF00005905D /* Analytics */,
+				993664362E848ACA0005905D /* FItapp.app */,
 			);
 			sourceTree = "<group>";
 		};
-		993663EC2E8477CB0005905D /* Products */ = {
+		9936641D2E847AF00005905D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				993663EB2E8477CB0005905D /* FItapp.app */,
+				9936641C2E847AF00005905D /* User.swift */,
+				9936643B2E847AF00005905D /* MealModels.swift */,
+				993664532E847AF00005905D /* GlucoseModels.swift */,
+				993664552E847AF00005905D /* HealthModels.swift */,
+				993664572E847AF00005905D /* ExerciseModels.swift */,
+				993664592E847AF00005905D /* MedicationModels.swift */,
+				9936645B2E847AF00005905D /* MealAnalysisModels.swift */,
 			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9936641F2E847AF00005905D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9936641E2E847AF00005905D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		993664212E847AF00005905D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				993664202E847AF00005905D /* BiometricAuthService.swift */,
+				993664372E847AF00005905D /* MealPlanningService.swift */,
+				993664392E847AF00005905D /* AIAnalyticsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		993664232E847AF00005905D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				993664222E847AF00005905D /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		993664282E847AF00005905D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				993664242E847AF00005905D /* BiometricAuthView.swift */,
+				993664252E847AF00005905D /* LoginView.swift */,
+				993664262E847AF00005905D /* MainTabView.swift */,
+				993664272E847AF00005905D /* SplashView.swift */,
+				993664452E847AF00005905D /* ExerciseLogView.swift */,
+				993664472E847AF00005905D /* GlucoseTrackingView.swift */,
+				993664492E847AF00005905D /* HealthView.swift */,
+				9936644B2E847AF00005905D /* MealPlanningView.swift */,
+				9936645C2E847AF00005905D /* ExerciseView.swift */,
+				9936645D2E847AF00005905D /* MedicationTrackerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		993664292E847AF00005905D /* Products */ = {
+			isa = PBXGroup;
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9936644C2E847AF00005905D /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				9936643D2E847AF00005905D /* HealthKitManager.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		9936644D2E847AF00005905D /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				9936643F2E847AF00005905D /* KeychainManager.swift */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		9936644E2E847AF00005905D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				993664412E847AF00005905D /* CoreDataManager.swift */,
+				993664502E847AF00005905D /* CoreDataEntities.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9936644F2E847AF00005905D /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				993664432E847AF00005905D /* AnalyticsEngine.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -60,14 +212,11 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				993663ED2E8477CB0005905D /* FItapp */,
-			);
 			name = FItapp;
 			packageProductDependencies = (
 			);
 			productName = FItapp;
-			productReference = 993663EB2E8477CB0005905D /* FItapp.app */;
+			productReference = 993664362E848ACA0005905D /* FItapp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -95,8 +244,14 @@
 			mainGroup = 993663E22E8477CB0005905D;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 993663EC2E8477CB0005905D /* Products */;
+			productRefGroup = 993663E22E8477CB0005905D;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 993664292E847AF00005905D /* Products */;
+					ProjectRef = 9936641B2E847AF00005905D /* FItapp.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				993663EA2E8477CB0005905D /* FItapp */,
@@ -109,6 +264,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9936642B2E847AF00005905D /* Assets.xcassets in Resources */,
+				9936642C2E847AF00005905D /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +276,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9936642D2E847AF00005905D /* LoginView.swift in Sources */,
+				9936642E2E847AF00005905D /* User.swift in Sources */,
+				9936642F2E847AF00005905D /* SplashView.swift in Sources */,
+				993664302E847AF00005905D /* BiometricAuthView.swift in Sources */,
+				993664312E847AF00005905D /* AuthViewModel.swift in Sources */,
+				993664322E847AF00005905D /* DiabfitApp.swift in Sources */,
+				993664332E847AF00005905D /* MainTabView.swift in Sources */,
+				993664342E847AF00005905D /* BiometricAuthService.swift in Sources */,
+				993664352E847AF00005905D /* MealPlanningService.swift in Sources */,
+				993664382E847AF00005905D /* AIAnalyticsService.swift in Sources */,
+				9936643A2E847AF00005905D /* MealModels.swift in Sources */,
+				9936643C2E847AF00005905D /* HealthKitManager.swift in Sources */,
+				9936643E2E847AF00005905D /* KeychainManager.swift in Sources */,
+				993664402E847AF00005905D /* CoreDataManager.swift in Sources */,
+				993664422E847AF00005905D /* AnalyticsEngine.swift in Sources */,
+				993664442E847AF00005905D /* ExerciseLogView.swift in Sources */,
+				993664462E847AF00005905D /* GlucoseTrackingView.swift in Sources */,
+				993664482E847AF00005905D /* HealthView.swift in Sources */,
+				9936644A2E847AF00005905D /* MealPlanningView.swift in Sources */,
+				993664512E847AF00005905D /* CoreDataEntities.swift in Sources */,
+				993664522E847AF00005905D /* GlucoseModels.swift in Sources */,
+				993664542E847AF00005905D /* HealthModels.swift in Sources */,
+				993664562E847AF00005905D /* ExerciseModels.swift in Sources */,
+				993664582E847AF00005905D /* MedicationModels.swift in Sources */,
+				9936645A2E847AF00005905D /* MealAnalysisModels.swift in Sources */,
+				9936645E2E847AF00005905D /* ExerciseView.swift in Sources */,
+				9936645F2E847AF00005905D /* MedicationTrackerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
